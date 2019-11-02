@@ -1,0 +1,51 @@
+---------------------------------Perspectiva client---------------------------------------------------------------------------
+@Pagina HOME
+
+Arunca o privire pe asta: http://mkj-consulting.com/villadelsol/index.html (arata demodata, am facut asta acum 15 ani, dar a adus $4,5 milioane in 3 ani)
+
+	#titlu de bun venit hotelul "   "
+	#Adresa cu locatia hotelului,nr. telefon,email
+	#Imagini cu,camerele,restaurante si alte servicii oferite de hotel cu cateva comentarii]
+	#eventual oferte
+	#buton pentru rezervari
+	
+@Buton de rezervari->redirectionare catre formular
+
+	#tip de camera
+	#calendar care afiseaza pentru zilele selectate disponibilitatea(perspectiva culori [eventual tip de camera])
+	#la selectia zilei formularul se va updata automat pentru ziua respectiva(check in - check out)
+	#label cu,casete textbox[in functie de caseta va fi cu verificare automata]
+	#Date introduse de utilizator:
+		$nume,prenume
+		$tip de camera, numar de persoane
+		$email,numar telefon(lista cu posibile prefixe pentru telefon)
+		
+		$modalitatea plata(cash,card)
+			%card:numar card
+			%numele si prenumele vor fi preluate afisand un message la selctare card daca sa preia numele si prenumele gata scrise
+			%codul cartii de credit
+			%adresa la care se trimite factura pentru cartea de credit (billing address)
+			%detectare automat tip de card
+		$eventual mentiuni(daca vine cu,copilul;daca e vreo urgenta speciala;)
+		#butonul de submit cu verificarile datelor la apasarea acestuia+ redirectionare in caz de succes
+		$in caz de esec afisare ca notificare cat si evidentiat ce nu este in regula si eventual si de ce
+
+------------------------------Perspectiva administrator----------------------------------------------------------------------
+1. Baza de date pentru camere:
+		^Tip de camera (standars, superior, delux, etc...)
+		^Calendar cu disponibilitate (se actualizeaza din contul clientului)
+		^Tipul de camere are 3 stari: Liber, Reservat, Ocupat.
+		^Pret pe noapte in functie de numarul de ocupanti (se actualizeaza manual numai pentru camerele "Libere" in functie de zi. eg: zi lucratoare, weekend) 				sarbatoare)
+		
+2. Baza de date pentru clients:
+		Contul clientului se deschide cand se face reservarea. Un numar de reservare se creaza care devine numarul contului.
+		Se trimite un email la client cu acest numar (confirmare). Clientul poate accesa contul lui (reservarea) si  poate face schimbari sau poate anula reservarea. 
+		Contul are 5 stari: Reservat, Anulat, Checked In, Checked Out, History.	
+		Numarul camarei reservate se poate schimba la Check In, dar nu si pretul.
+		
+
+3. Rapoarte
+		Lista clientilor pe starea contului
+		Disponibilitate pe tip de camere 
+
+4.Posibilitate de cautare in baza de date
