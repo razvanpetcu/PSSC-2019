@@ -1,0 +1,24 @@
+﻿@model MVC.Models.Formular
+
+
+<h1 align="center">Formular</h1>
+<br />
+<br />
+<dv>
+
+    @using (Html.BeginForm("Rezervare", "Home", FormMethod.Post))
+    {
+        <h5>Tip camera:</h5> @Html.TextBoxFor(model => model.tip_camere,new {@name="tip_camere",@id="tip_camere"});
+        <h5>Check in:</h5> @Html.TextBoxFor(model => model.data_check_in);
+        <h5>Check out:</h5> @Html.TextBoxFor(model => model.data_check_out);
+        <h5>Nume prenume:</h5> @Html.TextBoxFor(model => model.nume_prenume);
+        <h5>Numar persoane:</h5> @Html.TextBoxFor(model => model.numar_persoane);
+        <h5>email:</h5> @Html.TextBoxFor(model => model.email);
+        <h5>Mod plata:</h5> @Html.TextBoxFor(model => model.mod_plata);
+        <h5>mentiuni:</h5> @Html.TextBoxFor(model => model.mentiuni);
+        <br />
+        <input type="Submit" value="Rezervare" />
+    }
+</dv>
+
+<p>Use this area to provide additional information.</p>
