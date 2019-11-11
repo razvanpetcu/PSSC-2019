@@ -1,0 +1,19 @@
+﻿@model MVC.Models.Home
+
+    <div class="jumbotron">
+        <h1 align="center">@Html.DisplayFor(model => model.titlu)</h1>
+        <h3 align="center">
+            @Html.DisplayFor(model => model.Adresa)            @Html.DisplayFor(model => model.nr_telefon)            @Html.DisplayFor(model => model.email)
+        </h3>
+        <br /><br />
+              <p>
+                  <img src="~/Imagini/1.jpg" align="left" />
+                      @Html.DisplayFor(model => model.servicii)                    @Html.DisplayFor(model => model.oferte)
+                  <img src="~/Imagini/2.jpg" align="right" />
+                  <p align="center">
+                  <img src="~/Imagini/3.jpg" align="bottom"  />
+                      <input type="button" value="Rezervare" onclick="location.href='@Url.Action("Rezervare")'"  />
+                  </p>
+              </p>
+
+    </div>

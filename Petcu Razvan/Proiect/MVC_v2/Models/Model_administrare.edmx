@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Baza_de_date.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Camere">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lux" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Superior" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Standard" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Numere camere" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabel_clienti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Prenume" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Tip Camera" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Check IN" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Check OUT" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Carte Credit" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Numar Carte" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="Data expirare" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="CCV" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Mentiuni" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="Baza_de_dateModelStoreContainer">
+          <EntitySet Name="Camere" EntityType="Self.Camere" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabel_clienti" EntityType="Self.Tabel_clienti" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Baza_de_date.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Camere">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lux" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Superior" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Standard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numere_camere" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabel_clienti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nume" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenume" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tip_Camera" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Check_IN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Check_OUT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Carte_Credit" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numar_Carte" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Data_expirare" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CCV" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mentiuni" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Baza_de_dateEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cameres" EntityType="Self.Camere" />
+          <EntitySet Name="Tabel_clienti" EntityType="Self.Tabel_clienti" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Baza_de_dateModelStoreContainer" CdmEntityContainer="Baza_de_dateEntities1">
+          <EntitySetMapping Name="Cameres">
+            <EntityTypeMapping TypeName="Baza_de_date.Model.Camere">
+              <MappingFragment StoreEntitySet="Camere">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Lux" ColumnName="Lux" />
+                <ScalarProperty Name="Superior" ColumnName="Superior" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="Numere_camere" ColumnName="Numere camere" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabel_clienti">
+            <EntityTypeMapping TypeName="Baza_de_date.Model.Tabel_clienti">
+              <MappingFragment StoreEntitySet="Tabel_clienti">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Tip_Camera" ColumnName="Tip Camera" />
+                <ScalarProperty Name="Check_IN" ColumnName="Check IN" />
+                <ScalarProperty Name="Check_OUT" ColumnName="Check OUT" />
+                <ScalarProperty Name="Carte_Credit" ColumnName="Carte Credit" />
+                <ScalarProperty Name="Numar_Carte" ColumnName="Numar Carte" />
+                <ScalarProperty Name="Data_expirare" ColumnName="Data expirare" />
+                <ScalarProperty Name="CCV" ColumnName="CCV" />
+                <ScalarProperty Name="Mentiuni" ColumnName="Mentiuni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

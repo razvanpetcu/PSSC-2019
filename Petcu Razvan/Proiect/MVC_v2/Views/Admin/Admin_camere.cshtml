@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MVC.Models.Camere>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_camere</title>
+    <h1 align="center">Admin_camere</h1>
+    <br /><br />
+</head>
+<body>
+    <div>
+        <table border="1" align="center">
+            <tr>
+                <th>ID</th>
+                <th>Lux</th>
+                <th>Superior</th>
+                <th>Standard</th>
+                <th>Numar Camere</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Lux</td>
+                    <td>@item.Superior</td>
+                    <td>@item.Standard</td>
+                    <td>@item.Numere_camere</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVC.Models.Tabel_clienti>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_clienti</title>
+    <h1 align="center">Admin Clienti</h1>
+</head>
+<body>
+    <div> 
+        <table border="1" align="center">
+            <tr>
+                <th>ID</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Tip camera</th>
+                <th>Check IN</th>
+                <th>Check OUT</th>
+                <th>Carte credit</th>
+                <th>Numar carte</th>
+                <th>Data expirarii</th>
+                <th>CCV</th>
+                <th>Mentiuni</th>
+            </tr>
+                @foreach(var item in Model) {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nume</td>
+                        <td>@item.Prenume</td>
+                        <td>@item.Tip_Camera</td>
+                        <td>@item.Check_IN</td>
+                        <td>@item.Check_OUT</td>
+                        <td>@item.Carte_Credit</td>
+                        <td>@item.Numar_Carte</td>
+                        <td>@item.Data_expirare</td>
+                        <td>@item.CCV</td>
+                        <td>@item.Mentiuni</td>
+                    </tr>
+                }
+        </table>
+    </div>
+</body>
+</html>

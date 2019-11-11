@@ -1,0 +1,27 @@
+﻿@model MVC.Models.Tabel_clienti
+
+
+<h1 align="center">Formular</h1>
+<br />
+<br />
+<dv>
+
+    @using (Html.BeginForm("Rezervare", "Home", FormMethod.Post))
+    {
+        <h5>Nume:               </h5> @Html.TextBoxFor(model => model.Nume);
+        <h5>Prenume:            </h5> @Html.TextBoxFor(model => model.Prenume);
+        <h5>Tip Camera:         </h5> @Html.TextBoxFor(model => model.Tip_Camera);
+        <h5>Check in:           </h5> @Html.TextBoxFor(model => model.Check_IN);
+        <h5>Check out           </h5> @Html.TextBoxFor(model => model.Check_OUT);
+        <h5>Carte Credit        </h5> @Html.TextBoxFor(model => model.Carte_Credit);
+        <h5>Numar carte credit: </h5> @Html.TextBoxFor(model => model.Numar_Carte);
+        <h5>Data expirarii:     </h5> @Html.TextBoxFor(model => model.Data_expirare);
+        <h5>CCV:                </h5> @Html.TextBoxFor(model => model.CCV);
+        <h5>Mentiuni:           </h5> @Html.TextBoxFor(model => model.Mentiuni);
+        <h5> Apasa submit</h5>
+        <br />
+        <input type="Submit" value="Rezervare" />
+    }
+</dv>
+
+<p>Use this area to provide additional information.</p>
