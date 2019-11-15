@@ -1,0 +1,103 @@
+﻿@model MVC.Models.Model_clienti
+@using MVC.Models;
+
+
+<h1 align="center">Formular</h1>
+<br />
+<br />
+<dv>
+    @* Dotent core 3 taghelper*@
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Rezervare" asp-controller="Home" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.Nume" class="control-label"></label>
+                    <input asp-for="Model_clienti.Nume" class="form-control" placeholder="Nume" />
+                    <span asp-validation-for="Model_clienti.Nume" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.Prenume" class="control-label"></label>
+                    <input asp-for="Model_clienti.Prenume" class="form-control" placeholder="Prenume" />
+                    <span asp-validation-for="Model_clienti.Prenume" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.email" class="control-label"></label>
+                    <input asp-for="Model_clienti.email" class="form-control" />
+                    <span asp-validation-for="Model_clienti.email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.Tip_camera" class="control-label"></label>
+                    <select asp-for="Model_clienti.Tip_camera" asp-items="Html.GetEnumSelectList<Tip_camera>()" class="form-control">
+                        <option>Select</option>
+                    </select>
+                    <span asp-validation-for="Model_clienti.Tip_camera" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.check_in" class="control-label"></label>
+                    <input asp-for="Model_clienti.check_in" type="date" class="form-control" />
+                    <span asp-validation-for="Model_clienti.check_in" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.check_out" class="control-label"></label>
+                    <input asp-for="Model_clienti.check_out" type="date" class="form-control" />
+                    <span asp-validation-for="Model_clienti.check_out" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.carte_de_Credit" class="control-label"></label>
+                    <select asp-for="Model_clienti.carte_de_Credit" asp-items="Html.GetEnumSelectList<carte_de_Credit>()" class="form-control">
+                        <option>Select</option>
+                    </select>
+                    <span asp-validation-for="Model_clienti.Tip_camera" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.Data_Expirarii" class="control-label"></label>
+                    <input asp-for="Model_clienti.Data_Expirarii" class="form-control" />
+                    <span asp-validation-for="Model_clienti.Data_Expirarii" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.numar_carte" class="control-label"></label>
+                    <input asp-for="Model_clienti.numar_carte" class="form-control" />
+                    <span asp-validation-for="Model_clienti.numar_carte" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.CCV" class="control-label"></label>
+                    <input asp-for="Model_clienti.CCV" class="form-control" />
+                    <span asp-validation-for="Model_clienti.CCV" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Model_clienti.Mentiuni" class="control-label"></label>
+                    <input asp-for="Model_clienti.Mentiuni" class="form-control" />
+                    <span asp-validation-for="Model_clienti.Mentiuni" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Rezervare" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+
+</dv>
+
+<p>Use this area to provide additional information.</p>
