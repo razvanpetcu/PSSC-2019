@@ -1,0 +1,108 @@
+﻿@model MVC_CORE.Models.Model_clienti
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Actualizare_client</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+                <form asp-action="Actualizare_client" asp-controller="Home" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Nume" class="control-label"></label>
+                        <input asp-for="Nume" class="form-control" placeholder="Nume" />
+                        <span asp-validation-for="Nume" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Prenume" class="control-label"></label>
+                        <input asp-for="Prenume" class="form-control" placeholder="Prenume" />
+                        <span asp-validation-for="Prenume" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label"></label>
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="tip_camera" class="control-label"></label>
+                        <select asp-for="tip_camera" asp-items="Html.GetEnumSelectList<Model_clienti.Tip_camera>()" class="form-control">
+                            <option>Select</option>
+                        </select>
+                        <span asp-validation-for="tip_camera" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="check_in" class="control-label"></label>
+                        <input asp-for="check_in" class="form-control" />
+                        <span asp-validation-for="check_in" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="check_out" class="control-label"></label>
+                        <input asp-for="check_out" class="form-control" />
+                        <span asp-validation-for="check_out" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="carte_de_credit" class="control-label"></label>
+                        <select asp-for="carte_de_credit" asp-items="Html.GetEnumSelectList<Model_clienti.Carte_de_credit>()" class="form-control">
+                            <option>Select</option>
+                        </select>
+                        <span asp-validation-for="carte_de_credit" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Data_expirarii" class="control-label"></label>
+                        <input asp-for="Data_expirarii" class="form-control" />
+                        <span asp-validation-for="Data_expirarii" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="numar_carte" class="control-label"></label>
+                        <input asp-for="numar_carte" class="form-control" />
+                        <span asp-validation-for="numar_carte" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CCV" class="control-label"></label>
+                        <input asp-for="CCV" class="form-control" />
+                        <span asp-validation-for="CCV" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Mentiuni" class="control-label"></label>
+                        <input asp-for="Mentiuni" class="form-control" />
+                        <span asp-validation-for="Mentiuni" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Modificare" class="btn btn-primary" />
+                    </div>
+                </form>
+                <form asp-action="Anulare" asp-controller="Home" method="post">
+                    <div class="form-group">
+                        <input type="submit" value="Anulare" class="btn btn-primary" />
+                    </div>
+                </form>
+        </div>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.fail))
+    {
+        <script>alert("@Model.fail");</script>
+    }
+    </dv>
+</body>
+</html>

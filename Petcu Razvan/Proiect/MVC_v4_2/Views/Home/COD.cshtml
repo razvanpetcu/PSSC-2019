@@ -1,0 +1,27 @@
+﻿@model MVC_CORE.Models.COD
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>COD</title>
+    <h1 align="center"> Introducere cod</h1>
+</head>
+<body>
+    <form align="center" asp-action="COD" asp-controller="Home" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="id" class="control-label"></label>
+            <input asp-for="id" class="form-control" />
+            <span asp-validation-for="id" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Acces rezervare proprie" class="btn btn-primary" />
+        </div>
+    </form>
+</body>
+</html>
