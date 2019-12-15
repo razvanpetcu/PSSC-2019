@@ -1,0 +1,114 @@
+﻿@model MVC_CORE.Models.Model_clienti
+@using MVC_CORE.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rezervare</title>
+</head>
+<body>
+    <h1 align="center" style="background-color:#00FFFF">Formular <br /><br /></h1>
+    <dv style="background-color:#00FFFF">
+        @* Dotent core 3 taghelper*@
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Rezervare" asp-controller="Home" method="post" style="background-color:#00FFFF">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Nume" class="control-label"></label>&emsp;&emsp;&emsp;
+                        <input asp-for="Nume" class="form-control" placeholder="Nume" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                        <span asp-validation-for="Nume" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Prenume" class="control-label"></label>&emsp;&nbsp;&nbsp;&nbsp;
+                        <input asp-for="Prenume" class="form-control" placeholder="Prenume" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                        <span asp-validation-for="Prenume" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label"></label>&emsp;&emsp;&emsp;
+                        <input asp-for="email" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="tip_camera" class="control-label"></label>&nbsp;&nbsp;&nbsp;
+                        <select asp-for="tip_camera" asp-items="Html.GetEnumSelectList<Model_clienti.Tip_camera>()" class="form-control" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE">
+                            <option>Select</option>
+                        </select>
+                        <span asp-validation-for="tip_camera" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="check_in" class="control-label"></label>&emsp;&nbsp;&nbsp;&nbsp;
+                        <input asp-for="check_in" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                        <span asp-validation-for="check_in" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="check_out" class="control-label"></label>&emsp;&nbsp;
+                        <input asp-for="check_out" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                        <span asp-validation-for="check_out" class="text-danger"></span>
+                    </div>
+
+                        <div class="form-group">
+                            <label asp-for="carte_de_credit" class="control-label"></label>
+                            <select asp-for="carte_de_credit" asp-items="Html.GetEnumSelectList<Model_clienti.Carte_de_credit>()" class="form-control" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE">
+                                <option>Select</option>
+                            </select>
+                            <span asp-validation-for="carte_de_credit" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Data_expirarii" class="control-label"></label>
+                            <input asp-for="Data_expirarii" class="form-control"  size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE"/>
+                            <span asp-validation-for="Data_expirarii" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="numar_carte" class="control-label"></label>&nbsp;&nbsp;
+                            <input asp-for="numar_carte" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                            <span asp-validation-for="numar_carte" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="CCV" class="control-label"></label>&emsp;&emsp;&emsp;&nbsp;
+                            <input asp-for="CCV" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                            <span asp-validation-for="CCV" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Mentiuni" class="control-label"></label>&emsp;&nbsp;&nbsp;
+                            <input asp-for="Mentiuni" class="form-control" size="20" style="font-family: verdana; font-size: 11px; border: 1px solid #B1B1B1; background-color: #EEEEEE" />
+                            <span asp-validation-for="Mentiuni" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Rezervare" class="btn btn-primary" />&emsp;<input type="reset" value="Reset" name="B2">
+                            <br />
+                            <br />
+                            <input name="Print3" onClick="window.print();return false" type="button" value=" Print this page" style="border:1px solid #B1B1B1; font-family: Verdana; font-size: 8pt; float:left; background-color:#EEEEEE">&emsp;<input name="Print4" onClick="window.close();return false" type="button" value="Close this window" style="border:1px solid #B1B1B1; font-family: Verdana; font-size: 8pt; background-color:#EEEEEE"></td>
+                        </div>
+                    </table>
+                </form>
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(Model.fail))
+        {
+            <script>alert("@Model.fail");</script>
+        }
+
+    </dvstyle="background-color:#00FFFF">
+
+<p>Use this area to provide additional information.</p>
+</body>
+</html>

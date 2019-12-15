@@ -1,0 +1,110 @@
+﻿@model List<Model_clienti>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rapoarte_clienti</title>
+</head>
+<body>
+    <table align="left" border="1">
+        <tr>
+            <th>Check_IN</th>
+            <th>Check_OUT</th>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Tip_camera</th>
+            <th>Carte_credit</th>
+            <th>Numar_carte</th>
+            <th>Data_expirare</th>
+            <th>CCV</th>
+            <th>Mentiuni</th>
+            <th>Stare</th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].check_in" class="form-control" readonly/>
+                        <span asp-validation-for="@Model[i].check_in" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].check_out" class="form-control" readonly />
+                        <span asp-validation-for="@Model[i].check_out" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].ID" class="form-control" readonly />
+                        <span asp-validation-for="@Model[i].ID" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].Nume" class="form-control"  readonly/>
+                        <span asp-validation-for="@Model[i].Nume" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].Prenume" class="form-control" readonly />
+                        <span asp-validation-for="@Model[i].Prenume" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <select asp-for="@Model[i].tip_camera" asp-items="Html.GetEnumSelectList<Model_clienti.Tip_camera>()" class="form-control" readonly>
+                        </select>
+                        <span asp-validation-for="@Model[i].tip_camera" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <select asp-for="@Model[i].carte_de_credit" asp-items="Html.GetEnumSelectList<Model_clienti.Carte_de_credit>()" class="form-control" readonly>
+                        </select>
+                        <span asp-validation-for="@Model[i].carte_de_credit" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].numar_carte" class="form-control"readonly />
+                        <span asp-validation-for="@Model[i].numar_carte" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].Data_expirarii" class="form-control" readonly/>
+                        <span asp-validation-for="@Model[i].Data_expirarii" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].Nume" class="form-control"readonly />
+                        <span asp-validation-for="@Model[i].CCV" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].Mentiuni" class="form-control" readonly/>
+                        <span asp-validation-for="@Model[i].Mentiuni" class="text-danger"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input asp-for="@Model[i].stare" class="form-control" />
+                        <span asp-validation-for="@Model[i].stare" class="text-danger"></span>
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@model List<Camere>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_clienti</title>
+    <h1>Admin_Clienti</h1>
+</head>
+<body onload="document.FormName.reset();">
+    <form asp-action="Admin_clienti" asp-controller="Admin" method="post">
+        <table align="left" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Camere Lux</th>
+                <th>Camere Superioare</th>
+                <th>Camere Standard</th>
+                <th>Numar camere</th>
+            </tr>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input asp-for="@Model[i].id" class="form-control" hidden />
+                            <span asp-validation-for="@Model[i].id" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <select asp-for="@Model[i].lux" asp-items="Html.GetEnumSelectList<Camere.Lux>()" class="form-control">
+                            </select>
+                            <span asp-validation-for="@Model[i].lux" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <select asp-for="@Model[i].sup" asp-items="Html.GetEnumSelectList<Camere.Superior>()" class="form-control">
+                            </select>
+                            <span asp-validation-for="@Model[i].lux" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <select asp-for="@Model[i].std" asp-items="Html.GetEnumSelectList<Camere.Standard>()" class="form-control">
+                            </select>
+                            <span asp-validation-for="@Model[i].std" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input asp-for="@Model[i].numar_camere" class="form-control" readonly />
+                            <span asp-validation-for="@Model[i].numar_camere" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+        <br /><br /><br /><br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </form>
+    <form asp-action="Adaugare_camere" asp-controller="Admin" method="post">
+        <input type="submit" value="Adaugare camere" class="btn btn-primary" />
+    </form>
+    <input type="button" value="Raport_clienti" onclick="location.href='@Url.Action("Rapoarte_clienti")'" />
+</body>
+</html>
