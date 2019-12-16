@@ -1,0 +1,70 @@
+﻿@model MVC_CORE.Models.Home
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body bgcolor="#00FFFF">
+    <table border="0" width="100%">
+        <tr>
+            <td align="center" bgcolor="black">
+
+                <p align="center">
+                    <font face="Californian FB" size="7" color="#FFCCFF">
+                        Hotel
+                        California
+                    </font>
+                </p>
+                <address align="center">
+                    <span style="font-style: normal">
+                        <font size="4" face="Californian FB" color="#FFCCFF">Sunset Blvd.</font>
+                    </span>
+                </address>
+                <address align="center">
+                    <span style="font-style: normal">
+                        <font size="4" face="Californian FB" color="#FFCCFF">Los Angeles, CA</font>
+                    </span>
+                </address>
+                <p>
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" width="1179">
+        <tr>
+            <td width="138">
+                <address align="left">
+                    <input type="image" src="~/Interfata/butoane/button14.jpg" />
+                </address>
+                <address align="left">
+                    <input type="image" src="~/Interfata/butoane/button17.jpg" />
+                </address>
+                <address align="left">
+                    <input type="image" src="~/Interfata/butoane/button1A.jpg" />
+                </address>
+                <br />
+                <address align="left">
+                    <input type="button" value="Rezervare" onclick="location.href='@Url.Action("Rezervare")'" />
+                </address>
+                <br />
+                <address align="left">
+                    <input type="button" value="Modificare" onclick="location.href='@Url.Action("COD")'" />
+                </address>
+                <p>
+            </td>
+            <td>
+                <img src="~/Interfata/camere/LA_Las Vegas 002.jpg"  width="250" height="185" />
+                <img src="~/Interfata/camere/LA_Las Vegas 011.jpg"  width="250" height="185"/>
+                <img src="~/Interfata/camere/LA-Las Vegas (9).jpg"  width="250" height="185"/>
+                <img src="~/Interfata/camere/LA_Las Vegas 005.jpg"  width="250" height="185"/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
